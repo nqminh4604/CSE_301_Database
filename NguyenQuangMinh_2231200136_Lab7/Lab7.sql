@@ -66,7 +66,8 @@ from salesman where Target_Achieved < 60;
 -- Quantity_On_Hand AS Quantity) and their stock status. Products with a positive quantity in stock are
 -- labeled as 'More 5 pieces in Stock'. Products with zero quantity are labeled as ‘Less 5 pieces in Stock'.
 select product_number id, product_name `name`, quantity_on_hand quantity, 
-case when quantity_on_hand > 0 then "More 5 pieces in Stock" else "Less 5 pieces in Stock" end "Stock status"
+case when quantity_on_hand > 0 then "More 5 pieces in Stock" 
+else "Less 5 pieces in Stock" end "Stock status"
 from product;
 
 #11. Create a procedure stores get_clients _by_city () saves the all Clients in table. Then Call procedure
@@ -104,7 +105,7 @@ begin
 end$$
 delimiter ;
 call show_quantity();
-salesman
+
 #15. Create a stored procedure to update the remarks for a specific salesman.
 delimiter  $$
 create procedure update_remark_salesman(in sm_number varchar(15), in sm_remark varchar(10))
